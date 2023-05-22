@@ -13,7 +13,7 @@ function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
 }
 
-export default function Header() {
+export default function Header(props) {
 	return (
 		<Disclosure as="nav" className="bg-gray-800">
 			{({ open }) => (
@@ -40,7 +40,6 @@ export default function Header() {
 								</Disclosure.Button>
 							</div>
 							<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-								
 								<div className="hidden sm:ml-6 sm:block">
 									<div className="flex space-x-4">
 										{navigation.map((item) => (
@@ -173,6 +172,7 @@ export default function Header() {
 							))}
 						</div>
 					</Disclosure.Panel>
+					{props.children}
 				</>
 			)}
 		</Disclosure>
