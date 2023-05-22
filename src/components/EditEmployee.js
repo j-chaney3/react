@@ -4,8 +4,8 @@ import Modal from 'react-bootstrap/Modal';
 
 const EditEmployee = (props) => {
 	const [show, setShow] = useState(false);
-    const [name, setName] = useState(props.name);
-    const [role, setRole] = useState(props.role);
+	const [name, setName] = useState(props.name);
+	const [role, setRole] = useState(props.role);
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -29,7 +29,15 @@ const EditEmployee = (props) => {
 					<Modal.Title>Update Employee</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
-					<form id="editmodal" className="w-full max-w-sm">
+					<form
+						id="editmodal"
+						className="w-full max-w-sm"
+						onSubmit={(e) => {
+                            handleClose();
+							e.preventDefault();
+							props.editEmployee(props.id, name, role);
+						}}
+					>
 						<div className="md:flex md:items-center mb-6">
 							<div className="md:w-1/3">
 								<label
@@ -45,8 +53,9 @@ const EditEmployee = (props) => {
 									id="name"
 									type="text"
 									value={name}
-                                    onChange={(e)=> {setName(e.target.value)}}
-                                    
+									onChange={(e) => {
+										setName(e.target.value);
+									}}
 								/>
 							</div>
 						</div>
@@ -65,16 +74,27 @@ const EditEmployee = (props) => {
 									id="role"
 									type="text"
 									value={role}
-                                    onChange={(e)=> {setRole(e.target.value)}}
-
+									onChange={(e) => {
+										setRole(e.target.value);
+									}}
 								/>
 							</div>
 						</div>
 					</form>
 				</Modal.Body>
 				<Modal.Footer>
-					<button className='bg-slate-400 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded' onClick={handleClose}>Close</button>
-					<button className='bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded' form='editmodal'>Update</button>
+					<button
+						className="bg-slate-400 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded"
+						onClick={handleClose}
+					>
+						Close
+					</button>
+					<button
+						className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+						form="editmodal"
+					>
+						Update
+					</button>
 				</Modal.Footer>
 			</Modal>
 		</>
