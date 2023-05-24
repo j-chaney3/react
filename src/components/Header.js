@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 const navigation = [
 	{ name: 'Employees', href: '/Employees' },
 	{ name: 'Customers', href: '/Customers' },
-	{ name: 'Projects', href: '/other' },
+	{ name: 'Dictionary', href: '/Dictionary' },
 	{ name: 'Calendar', href: 'other2' },
 ];
 
@@ -53,7 +53,7 @@ export default function Header(props) {
 													}) => {
 														return (
 															'rounded-md px-3 py-2 text-sm font-medium no-underline ' +
-															(isActive
+															(!isActive
 																? 'no-underline text-gray-300 hover:bg-gray-700 hover:text-white'
 																: ' no-underline bg-gray-900 text-white')
 														);
