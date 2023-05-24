@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import NotFound from '../components/NotFound';
+import DefinitionSearch from '../components/DefinitionSearch';
 
 const Definition = () => {
 	const [word, setWord] = useState([]);
@@ -27,7 +28,7 @@ const Definition = () => {
 				}
 				if (!response.ok) {
 					setError(true);
-					
+
 					throw new Error('Something went wrong');
 				}
 				return response.json();
@@ -74,11 +75,11 @@ const Definition = () => {
 							</p>
 						);
 					})}
+					<p>Search again: </p>
+					<DefinitionSearch/>
 				</>
 			) : null}
-			<Link to="/dictionary">
-				<button>Search another word</button>
-			</Link>
+			
 		</>
 	);
 };
