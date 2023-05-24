@@ -6,14 +6,20 @@ import AddEmployee from './components/AddEmployee';
 import EditEmployee from './components/EditEmployee';
 import Header from './components/Header';
 import Employees from './pages/Employees';
+import Customers from './pages/Customers';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-const App =() => {
-	
-
+const App = () => {
 	return (
 		<Header>
-			<Employees />
-		</Header> 
+			<BrowserRouter>
+				<Routes>
+					<Route path='/Employees' element={<Employees />} />
+					<Route path='/Customers' element={<Customers />} />
+					
+				</Routes>
+			</BrowserRouter>
+		</Header>
 	);
-}
+};
 export default App;
