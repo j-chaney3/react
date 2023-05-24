@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import AddEmployee from './components/AddEmployee';
 import EditEmployee from './components/EditEmployee';
 import Header from './components/Header';
+import NotFound from './components/NotFound';
 import Employees from './pages/Employees';
 import Customers from './pages/Customers';
 import Dictionary from './pages/Dictionary';
@@ -20,6 +21,8 @@ const App = () => {
 					<Route path="/customers" element={<Customers />} />
 					<Route path="/dictionary" element={<Dictionary />} />
 					<Route path="/definition/:search" element={<Definition />} />
+					<Route path='/404' element={<NotFound />} />
+					<Route path='*' element={<NotFound/>} />
 				</Routes>
 			</Header>
 		</BrowserRouter>
