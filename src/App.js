@@ -11,15 +11,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
 	return (
-		<Header>
-			<BrowserRouter>
+		<BrowserRouter>
+			<Header>
 				<Routes>
-					<Route path='/Employees' element={<Employees />} />
-					<Route path='/Customers' element={<Customers />} />
-					
+					<Route path="/Employees" element={<Employees />} />
+					<Route path="/Customers" element={<Customers />} />
 				</Routes>
-			</BrowserRouter>
-		</Header>
+			</Header>
+		</BrowserRouter>
 	);
 };
 export default App;
