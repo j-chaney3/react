@@ -15,7 +15,7 @@ const Definition = () => {
 			.then((response) => response.json())
 			.then((data) => {
 				setWord(data[0].meanings);
-				console.log(data[0].meanings);
+				
 			})
             .catch((error) => {
 				console.error('Error fetching definition:', error);
