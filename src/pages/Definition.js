@@ -46,7 +46,7 @@ const Definition = () => {
 			<>
 				<NotFound />
 				<Link to="/dictionary">
-					<button>Search another word</button>
+					<button>Try another word</button>
 				</Link>
 			</>
 		);
